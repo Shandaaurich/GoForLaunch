@@ -248,6 +248,15 @@ button {
   border-bottom: 2px solid var(--primary-color);
 }
 
+.rocketInfo a {
+  text-decoration: none;
+  color: var(--white);
+}
+.rocketInfo a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
 .divider {
   border-bottom: 2px solid var(--primary-color);
 }
