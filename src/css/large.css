@@ -1,0 +1,120 @@
+@media screen and (min-width: 500px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    /* padding: 0 10px; */
+  }
+
+  .logo {
+    display: flex;
+  }
+
+  /* nav bar start */
+  .nav {
+    width: 100%;
+    height: 60px;
+    margin-left: 2rem;
+  }
+  .topnav {
+    overflow: hidden;
+    width: 80%;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .topnav a {
+    /* float: left; */
+    display: block;
+    /* color: var(--dark-grey); */
+    text-align: center;
+    /* padding: 14px 16px; */
+    font-size: var(--large-font);
+    width: auto;
+  }
+  .topnav a:hover {
+    background-color: var(--black);
+    color: var(--white);
+    font-size: 25px;
+    /* text-decoration: underline overline var(--white); */
+    text-shadow: var(--white) 5px 0 10px;
+  }
+
+  .topnav .search {
+    float: right;
+  }
+
+  .topnav input[type="text"] {
+    float: right;
+    width: 100%;
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+  }
+
+  .topnav .search button {
+    display: inline;
+    float: right;
+    text-align: center;
+    padding: 6px 10px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* nav bar end */
+
+  body {
+    max-width: 1080px;
+    margin: auto;
+  }
+
+  .rocket-article {
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .rocketInfo,
+  .rocketImg {
+    padding: 1rem;
+  }
+
+  #rocketCountdown {
+    padding: 1rem;
+  }
+
+  .rocket-article h3,
+  .rocket-article h4 {
+    margin-top: 0;
+  }
+
+  .cart-card {
+    font-size: inherit;
+    grid-template-columns: 150px auto 15%;
+  }
+  .cart-total {
+    text-align: right;
+  }
+  .checkout-button {
+    margin-bottom: 2rem;
+  }
+}
+
+footer {
+  color: var(--primary-color);
+  font-size: var(--small-font);
+  padding: 1em;
+}
+table {
+  width: 70%;
+  margin: auto;
+}
+thead {
+  border: 2px solid black;
+}
+td {
+  padding-left: 7px;
+  border-bottom: 2px solid black;
+}

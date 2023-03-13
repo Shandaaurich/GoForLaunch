@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GO FOR LAUNCH | Home</title>
+    <link rel="stylesheet" href="/css/small.css" />
+    <link rel="stylesheet" href="/css/large.css" />
+    <script src="./js/main.js" type="module"></script>
+    <script src="./js/launch-listing.js" type="module"></script>
+  </head>
+
+  <body>
+    <header class="divider" id="main-header">
+      <nav class="nav" id="main-nav"></nav>
+    </header>
+    <main class="divider">
+      <dialog class="main-modal modal hidden" id="main-modal">
+        <div class="flex">
+          <button class="btn-close">⨉</button>
+        </div>
+        <div class="modal-content">
+          <div>
+            <h3>Sign up for our Newsletter!</h3>
+          </div>
+
+          <input type="email" id="email" placeholder="user@sleepoutside.com" />
+          <button class="btn registerBtn" type="submit">Sign Up</button>
+        </div>
+      </dialog>
+      <div class="overlay hidden"></div>
+      <div class="hero">
+        <img src="/images/artemisHero.jpg" alt="image of a rocket launch" />
+      </div>
+      <section class="mission">
+        <p>All the latest Rocket Launch information in one place!</p>
+      </section>
+      <div class="divider"></div>
+      <section class="mission_list"></section>
+    </main>
+    <footer id="main-footer"></footer>
+  </body>
+</html>
