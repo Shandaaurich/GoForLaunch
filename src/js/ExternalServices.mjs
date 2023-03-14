@@ -1,8 +1,8 @@
-// BYUI/local Login
-// const baseURL = "http://server-nodejs.cit.byui.edu:3000/"
-//External Site login
-const baseURL = "https://wdd330-backend.onrender.com/"
+
+const agencySearchBase = "https://lldev.thespacedevs.com/2.2.0/agencies/?search="
+
 const launchURL = "https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?format=json";
+
 // const launchURL = 'https://ll.thespacedevs.com/2.2.0/launch/upcoming/?format=json';
 
 async function convertToJson(res) {
@@ -28,6 +28,11 @@ export default class ExternalServices {
 
   async getData() {
     const response = await fetch(launchURL);
+    const data = await convertToJson(response);
+    return data.results;
+  }
+  async searchAgencyData(agency) {
+    const response = await fetch(agencySearchBase + `${agency}`);
     const data = await convertToJson(response);
     return data.results;
   }

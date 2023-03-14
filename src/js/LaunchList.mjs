@@ -7,15 +7,18 @@ function launchCardTemplate(rocket) {
   // const description = weather.current.weather[0].description;
   let localDate = new Date(rocket.window_start);
   let localDateFormated = localDate.toLocaleString();
-  console.log(rocket.mission.name);
-  console.log(rocket.launch_service_provider.name);
-  // let latitude = rocket.pad.latitude;
-  // let longitude = rocket.pad.longitude;
   let now = new Date().getTime();
   let t = localDate.getTime() - now;
   let days = Math.floor(t / (1000 * 60 * 60 * 24));
   let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 
+  // let latitude = rocket.pad.latitude;
+  // let longitude = rocket.pad.longitude;
+
+  //use the location information for each launch to format the API URL to pull in weather data for each location and add it to HTMl elements on the page. 
+  // const weatherURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=946ee3e55995e79e2d6f02d00a3dce79&units=imperial`
+
+  
   return `
     <article>
     <div class="rocketInfo">
@@ -28,7 +31,7 @@ function launchCardTemplate(rocket) {
     <img src="${rocket.image}" alt="${rocket.name} ">
     </div>
     <div id="rocketCountdown">
-   
+    <h4>Current weather: 67° F, scattered clouds</h4>
     <h3>Expected Launch Date: 
     ${localDateFormated}</h3>
     <h3>Countdown to liftoff: 
@@ -51,7 +54,6 @@ export default class LaunchList {
   async init() {
 
     const list = await this.dataSource.getData();
-    console.log(list);
     this.renderList(list);
 
   }

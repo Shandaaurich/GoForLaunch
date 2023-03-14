@@ -100,6 +100,26 @@ header {
   background: var(--tertiary-color);
 }
 
+/* End Navbar */
+
+/* Start Login Form */
+
+.loginForm {
+  margin: 1rem;
+  border-color: var(--primary-color);
+}
+
+.loginForm legend {
+  font-size: larger;
+  color: var(--primary-color);
+}
+
+.loginForm p {
+  color: var(--primary-color);
+}
+
+/* End Login Form */
+
 /* Start registration modal */
 
 body {
