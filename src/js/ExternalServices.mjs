@@ -1,9 +1,12 @@
 
+const baseURL = "http://server-nodejs.cit.byui.edu:3000/"
 const agencySearchBase = "https://lldev.thespacedevs.com/2.2.0/agencies/?search="
 
 const launchURL = "https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?format=json";
 
 // const launchURL = 'https://ll.thespacedevs.com/2.2.0/launch/upcoming/?format=json';
+
+const fakeStoreAPI = "https://fakestoreapi.com/products";
 
 async function convertToJson(res) {
   const data = await res.json();
@@ -31,13 +34,28 @@ export default class ExternalServices {
     const data = await convertToJson(response);
     return data.results;
   }
+
   async searchAgencyData(agency) {
     const response = await fetch(agencySearchBase + `${agency}`);
     const data = await convertToJson(response);
     return data.results;
   }
+
+  async getProductCategories() {
+    const response = await fetch(fakeStoreAPI + `/categories`);
+    const data = await convertToJson(response);
+    return data.results;
+  }
+
+  async getProductsByCategory(category) {
+    const response = await fetch(fakeStoreAPI + `/category/${category}`);
+    const data = await convertToJson(response);
+    return data.results;
+  }
+
+
   async findProductById(id) {
-    const response = await fetch(launchURL + `product/${id}`);
+    const response = await fetch(fakeStoreAPI + `/${id}`);
     const data = await convertToJson(response);
     return data.Result;
   }
@@ -64,7 +82,7 @@ export default class ExternalServices {
       },
       body: JSON.stringify(creds),
     };
-    const response = await fetch(launchURL + "login", options).then(
+    const response = await fetch(baseURL + "login", options).then(
       convertToJson
     );
     return response.accessToken;
@@ -76,7 +94,7 @@ export default class ExternalServices {
         "Authorization": `Bearer ${token}`
       }
     };
-    const response = await fetch(launchURL + "orders", options).then(
+    const response = await fetch(baseURL + "orders", options).then(
       convertToJson
     );
     return response;

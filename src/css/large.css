@@ -100,21 +100,36 @@
   .checkout-button {
     margin-bottom: 2rem;
   }
-}
 
-footer {
-  color: var(--primary-color);
-  font-size: var(--small-font);
-  padding: 1em;
-}
-table {
-  width: 70%;
-  margin: auto;
-}
-thead {
-  border: 2px solid black;
-}
-td {
-  padding-left: 7px;
-  border-bottom: 2px solid black;
+  .product-categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .product-categories img {
+    max-width: 50%;
+  }
+
+  .category a {
+  }
+
+  .products {
+  }
+
+  footer {
+    color: var(--primary-color);
+    font-size: var(--small-font);
+    padding: 1em;
+  }
+  table {
+    width: 70%;
+    margin: auto;
+  }
+  thead {
+    border: 2px solid black;
+  }
+  td {
+    padding-left: 7px;
+    border-bottom: 2px solid black;
+  }
 }

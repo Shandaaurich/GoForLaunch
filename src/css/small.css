@@ -281,8 +281,26 @@ button {
   border-bottom: 2px solid var(--primary-color);
 }
 
+.product-categories {
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.product-categories img {
+  display: block;
+  max-width: 20%;
+  margin: auto;
+}
+
+.category a {
+  text-decoration: none;
+  color: var(--medium-blue);
+}
+
 .products {
   padding: 0.5em;
+  text-align: center;
 }
 .product-list {
   display: flex;
