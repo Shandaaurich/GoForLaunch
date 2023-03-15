@@ -82,7 +82,7 @@ header {
   color: white;
 }
 
-.topnav a.active {
+.active {
   text-decoration: underline;
 }
 
@@ -288,6 +288,23 @@ button {
 }
 
 .product-categories img {
+  display: block;
+  max-width: 20%;
+  margin: auto;
+}
+
+.category a {
+  text-decoration: none;
+  color: var(--medium-blue);
+}
+
+.product-top {
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.product-top img {
   display: block;
   max-width: 20%;
   margin: auto;

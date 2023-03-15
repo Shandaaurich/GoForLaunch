@@ -14,7 +14,8 @@
 
 import { qs } from "./utils.mjs";
 
-const fakeStoreAPI = "https://fakestoreapi.com/products/categories";
+const fakeStoreAPIcat = "https://fakestoreapi.com/products/categories";
+const fakeStoreAPItop = "https://fakestoreapi.com/products?limit=8";
 
 const categoryOutput = qs(".product-categories");
 
@@ -32,17 +33,43 @@ function categoryTemplate(categories) {
         `;
         categoryOutput.insertAdjacentHTML("afterbegin", catTemplate)
     });
-
-
 }
 
 async function categoryList() {
 
-    const response = await fetch(fakeStoreAPI)
+    const response = await fetch(fakeStoreAPIcat)
     if (response.ok) {
         const data = await response.json();
-        console.log(data)
         categoryTemplate(data)
     }
 }
+
 categoryList();
+
+const topOutput = qs(".product-top");
+
+function topTemplate(topProducts) {
+
+    topProducts.forEach(async product => {
+
+        let productTemplate = `
+        <li class ="category" id="category">
+        <a href="./product-listing/index.html?category=${product.id}">
+        <img class="gifts" src="${product.image}" alt="${product} Products" />
+        <h2>${product.title}</h2>
+        </a>
+        </li>
+        `;
+        topOutput.insertAdjacentHTML("afterbegin", productTemplate)
+    });
+}
+
+async function topProductsList() {
+
+    const response = await fetch(fakeStoreAPItop)
+    if (response.ok) {
+        const data = await response.json();
+        topTemplate(data)
+    }
+}
+topProductsList();
