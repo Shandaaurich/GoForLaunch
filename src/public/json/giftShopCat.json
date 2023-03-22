@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "test",
+    "image": "https://placehold.co/200",
+    "creationAt": "2023-03-22T15:37:23.000Z",
+    "updatedAt": "2023-03-22T19:30:34.000Z"
+  },
+  {
+    "id": 2,
+    "name": "Electronics",
+    "image": "https://api.lorem.space/image/watch?w=640&h=480&r=1509",
+    "creationAt": "2023-03-22T15:37:23.000Z",
+    "updatedAt": "2023-03-22T15:37:23.000Z"
+  },
+  {
+    "id": 3,
+    "name": "Furniture",
+    "image": "https://api.lorem.space/image/furniture?w=640&h=480&r=2092",
+    "creationAt": "2023-03-22T15:37:23.000Z",
+    "updatedAt": "2023-03-22T15:37:23.000Z"
+  },
+  {
+    "id": 4,
+    "name": "Shoes",
+    "image": "https://api.lorem.space/image/shoes?w=640&h=480&r=4654",
+    "creationAt": "2023-03-22T15:37:23.000Z",
+    "updatedAt": "2023-03-22T15:37:23.000Z"
+  },
+  {
+    "id": 5,
+    "name": "Others",
+    "image": "https://api.lorem.space/image?w=640&h=480&r=2982",
+    "creationAt": "2023-03-22T15:37:23.000Z",
+    "updatedAt": "2023-03-22T15:37:23.000Z"
+  },
+  {
+    "id": 7,
+    "name": "New Category",
+    "image": "https://placeimg.com/640/480/any",
+    "creationAt": "2023-03-22T18:46:55.000Z",
+    "updatedAt": "2023-03-22T18:46:55.000Z"
+  },
+  {
+    "id": 9,
+    "name": "Nueva Categoría",
+    "image": "https://placeimg.com/640/480/any",
+    "creationAt": "2023-03-22T19:15:35.000Z",
+    "updatedAt": "2023-03-22T19:15:35.000Z"
+  },
+  {
+    "id": 11,
+    "name": "kratos",
+    "image": "https://evelongames.com/wp-content/uploads/2022/11/Kratos-portada-1536x864.jpg",
+    "creationAt": "2023-03-22T19:50:43.000Z",
+    "updatedAt": "2023-03-22T19:50:43.000Z"
+  }
+]
