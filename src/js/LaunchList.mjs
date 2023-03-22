@@ -18,27 +18,31 @@ function launchCardTemplate(rocket) {
   //use the location information for each launch to format the API URL to pull in weather data for each location and add it to HTMl elements on the page. 
   // const weatherURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=946ee3e55995e79e2d6f02d00a3dce79&units=imperial`
 
+  //button for agency page:             
+{/* <button class="agencyLink" data-id="${rocket.launch_service_provider.name}">${rocket.launch_service_provider.name} launches</button>  */}
   
   return `
-    <article>
-    <div class="rocketInfo">
-    <h3>Mission: ${rocket.mission.name}</h3>
-    <p>Agency: ${rocket.launch_service_provider.name} </p>
-    <p>Rocket: ${rocket.name} </p>
-    <p>Location: ${rocket.pad.location.name} </p>
-    </div>
-    <div class="rocketImg">
-    <img src="${rocket.image}" alt="${rocket.name} ">
-    </div>
-    <div id="rocketCountdown">
-    <h4>Current weather: 67° F, scattered clouds</h4>
-    <h3>Expected Launch Date: 
-    ${localDateFormated}</h3>
-    <h3>Countdown to liftoff: 
-    ${days} days and ${hours} hours. 
-        Launch status: ${rocket.status.name}</h3>
-        </div>
-        </article>
+  <article class="rocket-article">
+  <div class="rocketInfo">
+  <h3>Mission: ${rocket.mission.name}</h3>
+  <p> Agency: <strong>${rocket.launch_service_provider.name}</strong> </p>
+
+  <p>Rocket: <strong>${rocket.name}</strong> </p>
+  <p>Location: <strong>${rocket.pad.location.name}</strong> </p>
+  </div>
+  <div class="rocketImg">
+  <img src="${rocket.image}" alt="${rocket.name} ">
+  </div>
+  <div id="rocketCountdown">
+
+  <h3>Expected Launch Date: </h3>
+  <p>${localDateFormated} Local</p>
+  <h3>Countdown to liftoff: </h3>
+  <p>${days} days and ${hours} hours.</p> 
+  <h3>Launch status: </h3>
+  <p>${rocket.status.name}</p>
+  </div>
+  </article>
         `
 
     ;
