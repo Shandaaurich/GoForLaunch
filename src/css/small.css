@@ -299,7 +299,7 @@ button {
 
 .product-categories img {
   display: block;
-  max-width: 20%;
+  /* max-width: 20%; */
   margin: auto;
 }
 
@@ -316,7 +316,7 @@ button {
 
 .product-top img {
   display: block;
-  max-width: 20%;
+  /* max-width: 20%; */
   margin: auto;
 }
 

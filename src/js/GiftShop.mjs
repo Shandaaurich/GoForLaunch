@@ -20,7 +20,8 @@ export default class GiftShop {
 
 function categoryTemplate(categories) {    
     const catSection = document.createElement("section");
-    categories.slice(0,5).forEach(category => {
+    catSection.classList.add("category-section");
+    categories.slice(0,8).forEach(category => {
 
       const cat_div = document.createElement("div");
       cat_div.classList.add("category");
@@ -49,7 +50,8 @@ return catSection;
 
 function topProductTemplate(products) {    
   const prodSection = document.createElement("section");
-  products.slice(0,5).forEach(product => {
+  prodSection.classList.add("product-section");
+  products.slice(0,9).forEach(product => {
 
     const prod_div = document.createElement("div");
     prod_div.classList.add("category");

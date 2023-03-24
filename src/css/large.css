@@ -101,18 +101,19 @@
     margin-bottom: 2rem;
   }
 
-  .product-categories {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
 
   .product-categories img {
     max-width: 50%;
   }
 
-  .product-top {
+  .category-section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  
+  .product-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .product-top img {
