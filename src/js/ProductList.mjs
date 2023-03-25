@@ -1,29 +1,7 @@
 import { renderListWithTemplate } from "./utils.mjs";
 
-function productCardTemplate(product) {
-  var discount = Math.round(product.SuggestedRetailPrice - product.FinalPrice);
-  console.log(product.FinalPrice);
-  if (discount != 0) {
-    var discountHTML =
-      `
-        <p class="product-card__discount" style="background-color:coral; text-align:center;">Discounted - $${discount} off!</p>
-        `
-  } else {
-    discountHTML = "";
-  }
-  return `<li class="product-card"><a href="/product_pages/index.html?product=${product.Id}"><img
-    src="${product.Images.PrimaryMedium}"
-    alt="Image of ${product.Name}"
-    /><h3 class="card__brand">${product.Brand.Name}</h3><h2 class="card__name">${product.NameWithoutBrand}</h2><p class="product-card__price">$${product.FinalPrice}</p>${discountHTML}</a></li>
-    
-    `;
-
-}
-
-export default class ProductListing {
+export default class ProductList {
   constructor(category, dataSource, listElement) {
-    // We passed in this information to make our class as reusable as possible.
-    // Being able to define these things when we use the class will make it very flexible
     this.category = category;
     this.dataSource = dataSource;
     this.listElement = listElement;
@@ -39,6 +17,37 @@ export default class ProductListing {
   renderList(list) {
     renderListWithTemplate(productCardTemplate, this.listElement, list);
   }
+}
+
+function productCardTemplate(products) {
+
+  const prodSection = document.createElement("section");
+  prodSection.classList.add("product-section");
+  
+  products.slice(0,9).forEach(product => {
+
+    const prod_div = document.createElement("div");
+    prod_div.classList.add("category");
+    prod_div.setAttribute("id", `${product.title}category`);
+
+    const prod_anchor = document.createElement("a");
+    prod_anchor.setAttribute("href", `./product-pages/index.html?product=${product.name}`);
+
+    const prod_img = document.createElement("img");
+    prod_img.classList.add("gifts");
+    prod_img.setAttribute("src", product.category.image);
+    prod_img.setAttribute("alt", `"${product.title} Products"`);
+
+    const prod_h2 = document.createElement("h2");
+    prod_h2.innerText = product.title;
+
+    prod_anchor.appendChild(prod_img);
+    prod_anchor.appendChild(prod_h2);
+    prod_div.appendChild(prod_anchor);
+
+    prodSection.appendChild(prod_div);
+});
+
 }
 
 

@@ -288,7 +288,7 @@ button {
 }
 
 .divider {
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--tertiary-color);
 }
 
 .product-categories {

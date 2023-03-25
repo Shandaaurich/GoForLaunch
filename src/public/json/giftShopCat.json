@@ -1,56 +1,56 @@
 [
   {
     "id": 1,
-    "name": "Space shirts",
+    "name": "shirts",
     "image": "https://cdn.pixabay.com/photo/2016/07/02/12/21/eclipse-1492818_1280.jpg",
     "creationAt": "2023-03-22T15:37:23.000Z",
     "updatedAt": "2023-03-22T19:30:34.000Z"
   },
   {
     "id": 2,
-    "name": "Space Electronics",
+    "name": "Electronics",
     "image": "https://cdn.pixabay.com/photo/2017/09/12/11/56/universe-2742113_1280.jpg",
     "creationAt": "2023-03-22T15:37:23.000Z",
     "updatedAt": "2023-03-22T15:37:23.000Z"
   },
   {
     "id": 3,
-    "name": "Space Furniture",
+    "name": "Furniture",
     "image": "https://cdn.pixabay.com/photo/2021/01/17/02/02/planets-5923806_1280.jpg",
     "creationAt": "2023-03-22T15:37:23.000Z",
     "updatedAt": "2023-03-22T15:37:23.000Z"
   },
   {
     "id": 4,
-    "name": "Space Shoes",
+    "name": "Shoes",
     "image": "https://cdn.pixabay.com/photo/2016/03/18/15/02/ufo-1265186_1280.jpg",
     "creationAt": "2023-03-22T15:37:23.000Z",
     "updatedAt": "2023-03-22T15:37:23.000Z"
   },
   {
     "id": 5,
-    "name": "Space Others",
+    "name": "Others",
     "image": "https://cdn.pixabay.com/photo/2012/08/25/22/22/saturn-54999_1280.jpg",
     "creationAt": "2023-03-22T15:37:23.000Z",
     "updatedAt": "2023-03-22T15:37:23.000Z"
   },
   {
     "id": 7,
-    "name": "Space New Category",
+    "name": "New Category",
     "image": "https://cdn.pixabay.com/photo/2019/11/07/17/07/universe-4609408_1280.jpg",
     "creationAt": "2023-03-22T18:46:55.000Z",
     "updatedAt": "2023-03-22T18:46:55.000Z"
   },
   {
     "id": 9,
-    "name": "Space Nueva Categoría",
+    "name": "Nueva Categoría",
     "image": "https://cdn.pixabay.com/photo/2011/12/14/12/23/solar-system-11111_1280.jpg",
     "creationAt": "2023-03-22T19:15:35.000Z",
     "updatedAt": "2023-03-22T19:15:35.000Z"
   },
   {
     "id": 11,
-    "name": "Space kratos",
+    "name": "kratos",
     "image": "https://cdn.pixabay.com/photo/2016/10/30/20/22/astronaut-1784245_1280.jpg",
     "creationAt": "2023-03-22T19:50:43.000Z",
     "updatedAt": "2023-03-22T19:50:43.000Z"

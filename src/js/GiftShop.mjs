@@ -7,47 +7,22 @@ export default class GiftShop {
   }
 
   renderCategoryDetails() {
-    //select the element of the page and prepend the alert sections to it
+    //select the element of the page and prepend the category section to it
     const element = qs(".product-categories");
     element.prepend(categoryTemplate(this.dataSource));
   }
   renderTopProductDetails() {
-    //select the element of the page and prepend the alert sections to it
+    //select the element of the page and prepend the top products section to it
     const element = qs(".product-top");
     element.prepend(topProductTemplate(this.dataSource));
   }
+
+  async renderSingleCategoryDetails(categoryId) {
+    const element = qs(".single-category");
+    const products = this.dataSource.getProductByCategoryId(categoryId)
+    element.prepend(topProductTemplate(products));
+  }
 }
-
-function categoryTemplate(categories) {    
-    const catSection = document.createElement("section");
-    catSection.classList.add("category-section");
-    categories.slice(0,8).forEach(category => {
-
-      const cat_div = document.createElement("div");
-      cat_div.classList.add("category");
-      cat_div.setAttribute("id", `${category.name}category`);
-
-      const cat_anchor = document.createElement("a");
-      cat_anchor.setAttribute("href", `./product-listing/index.html?category=${category.name}`);
-
-      const cat_img = document.createElement("img");
-      cat_img.classList.add("gifts");
-      cat_img.setAttribute("src", category.image);
-      cat_img.setAttribute("alt", `"${category.name} Products"`);
-
-      const cat_h2 = document.createElement("h2");
-      cat_h2.innerText = category.name;
-
-      cat_anchor.appendChild(cat_img);
-      cat_anchor.appendChild(cat_h2);
-      cat_div.appendChild(cat_anchor);
-
-      catSection.appendChild(cat_div);
-});
-return catSection;
-}
-
-
 function topProductTemplate(products) {    
   const prodSection = document.createElement("section");
   prodSection.classList.add("product-section");
@@ -66,7 +41,7 @@ function topProductTemplate(products) {
     prod_img.setAttribute("alt", `"${product.title} Products"`);
 
     const prod_h2 = document.createElement("h2");
-    prod_h2.innerText = product.title;
+    prod_h2.innerText = `Space ${product.title}`;
 
     prod_anchor.appendChild(prod_img);
     prod_anchor.appendChild(prod_h2);
@@ -76,3 +51,34 @@ function topProductTemplate(products) {
 });
 return prodSection;
 }
+function categoryTemplate(categories) {    
+    const catSection = document.createElement("section");
+    catSection.classList.add("category-section");
+    categories.slice(0,8).forEach(category => {
+
+      const cat_div = document.createElement("div");
+      cat_div.classList.add("category");
+      cat_div.setAttribute("id", `${category.name}category`);
+
+      const cat_anchor = document.createElement("a");
+      cat_anchor.setAttribute("href", `./product-listing/index.html?category=${category.id}`);
+
+      const cat_img = document.createElement("img");
+      cat_img.classList.add("gifts");
+      cat_img.setAttribute("src", category.image);
+      cat_img.setAttribute("alt", `"${category.name} Products"`);
+
+      const cat_h2 = document.createElement("h2");
+      cat_h2.innerText = `Space ${category.name}`;
+
+      cat_anchor.appendChild(cat_img);
+      cat_anchor.appendChild(cat_h2);
+      cat_div.appendChild(cat_anchor);
+
+      catSection.appendChild(cat_div);
+});
+return catSection;
+}
+
+
+

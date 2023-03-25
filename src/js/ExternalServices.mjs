@@ -5,12 +5,14 @@ const launchURL = "https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?format=
 
 // const launchURL = 'https://ll.thespacedevs.com/2.2.0/launch/upcoming/?format=json';
 
+const prodByCategory = "https://api.escuelajs.co/api/v1/products/?categoryId="
+
 async function convertToJson(res) {
   const data = await res.json();
   if (res.ok) {
     return data;
   } else {
-    throw { name: "servicesError", message: data};
+    throw { name: "servicesError", message: data };
   }
 }
 // function sortByProperty(property){  
@@ -19,7 +21,7 @@ async function convertToJson(res) {
 //         return 1;  
 //      else if(a[property] < b[property])  
 //         return -1;  
- 
+
 //      return 0;  
 //   }  
 // }
@@ -29,8 +31,9 @@ export default class ExternalServices {
   async getData() {
     const response = await fetch(launchURL);
     if (response.ok) {
-    const data = await convertToJson(response);
-    return data.results;
+      const data = await convertToJson(response);
+      console.log(data);
+      return data.results;
     }
   }
 
@@ -38,6 +41,17 @@ export default class ExternalServices {
     const response = await fetch(agencySearchBase + `${agency}`);
     const data = await convertToJson(response);
     return data.results;
+  }
+
+  async getProductByCategoryId(categoryId) {
+
+    const response = await fetch(prodByCategory + `${categoryId}`);
+    if (response.ok) {
+      // const data = await convertToJson(response);
+      const data = await response.json();
+      console.log(data.type);
+      return data;
+    }
   }
 
   async checkout(json) {
@@ -49,7 +63,7 @@ export default class ExternalServices {
       body: JSON.stringify(json)
     };
 
-    const response = await fetch (launchURL + `checkout`, thingToSend)
+    const response = await fetch(launchURL + `checkout`, thingToSend)
     const data = await convertToJson(response);
     return data.Result;
   }
