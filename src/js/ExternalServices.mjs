@@ -53,6 +53,15 @@ export default class ExternalServices {
       return data;
     }
   }
+  
+  async agencyData(agencyId) {
+
+    const response = await fetch(prodByCategory + `${agencyId}`);
+    if (response.ok) {
+      const data = await convertToJson(response);
+      return data;
+    }
+  }
 
   async checkout(json) {
     const thingToSend = {

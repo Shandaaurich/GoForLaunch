@@ -90,6 +90,19 @@
     margin-top: 0;
   }
 
+  .agencyPara {
+    color: var(--primary-color);
+    text-align: center;
+    grid-column: 1/4;
+  }
+  
+  .agencyPara p {
+    font-size: larger;
+    margin-top: 0%;
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
   .cart-card {
     font-size: inherit;
     grid-template-columns: 150px auto 15%;

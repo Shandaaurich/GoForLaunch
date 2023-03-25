@@ -18,8 +18,7 @@ function launchCardTemplate(rocket) {
   //use the location information for each launch to format the API URL to pull in weather data for each location and add it to HTMl elements on the page. 
   // const weatherURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=946ee3e55995e79e2d6f02d00a3dce79&units=imperial`
 
-  //button for agency page:             
-{/* <button class="agencyLink" data-id="${rocket.launch_service_provider.name}">${rocket.launch_service_provider.name} launches</button>  */}
+
   
   return `
   <article class="rocket-article">
@@ -28,8 +27,9 @@ function launchCardTemplate(rocket) {
   <p> Agency: <strong>${rocket.launch_service_provider.name}</strong> </p>
 
   <p>Rocket: <strong>${rocket.name}</strong> </p>
-  <p>Location: <strong>${rocket.pad.location.name}</strong> </p>
-  </div>
+  <p>Location: <strong>${rocket.pad.location.name}</strong> </p>  
+
+  </div>              
   <div class="rocketImg">
   <img src="${rocket.image}" alt="${rocket.name} ">
   </div>
@@ -41,6 +41,11 @@ function launchCardTemplate(rocket) {
   <p>${days} days and ${hours} hours.</p> 
   <h3>Launch status: </h3>
   <p>${rocket.status.name}</p>
+  </div>
+  <div class="agencyPara">
+  <a href="./agency/index.html?agencyId=${rocket.launch_service_provider.id}&agencyName=${rocket.launch_service_provider.name}">
+  <p>Click <strong>here</strong> to learn more about the ${rocket.launch_service_provider.name}</p>
+  </a>
   </div>
   </article>
         `
