@@ -14,8 +14,9 @@ titleElement.textContent = title;
 
 
 var agency = new ExternalServices();
-var listElement = qs(".mission_list");
+var listElement = qs(".agency-launches");
 
 
-var list = new Agency(agency, listElement, agencyId);
+var list = new Agency(agency, listElement, agencyName);
 list.init();
+

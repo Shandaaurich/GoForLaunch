@@ -1,11 +1,18 @@
 
-const agencySearchBase = "https://lldev.thespacedevs.com/2.2.0/agencies/?search="
+
 
 const launchURL = "https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?format=json";
 
-// const launchURL = 'https://ll.thespacedevs.com/2.2.0/launch/upcoming/?format=json';
+// const launchURL = "https://ll.thespacedevs.com/2.2.0/launch/upcoming/?format=json";
 
-const prodByCategory = "https://api.escuelajs.co/api/v1/products/?categoryId="
+const agencySearchBase = "https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?format=json&search=";
+
+const weatherURL1 = "https://api.openweathermap.org/data/2.5/onecall?lat=";
+
+const weatherURL2 = "&lon=";
+
+const weatherURL3 = "&appid=946ee3e55995e79e2d6f02d00a3dce79&units=imperial";
+
 
 async function convertToJson(res) {
   const data = await res.json();
@@ -15,53 +22,30 @@ async function convertToJson(res) {
     throw { name: "servicesError", message: data };
   }
 }
-// function sortByProperty(property){  
-//   return function(a,b){  
-//      if(a[property] > b[property])  
-//         return 1;  
-//      else if(a[property] < b[property])  
-//         return -1;  
 
-//      return 0;  
-//   }  
-// }
 
 export default class ExternalServices {
 
   async getData() {
     const response = await fetch(launchURL);
-    if (response.ok) {
       const data = await convertToJson(response);
-      console.log(data);
       return data.results;
-    }
   }
 
-  async searchAgencyData(agency) {
+  async agencyData(agency) {
     const response = await fetch(agencySearchBase + `${agency}`);
     const data = await convertToJson(response);
     return data.results;
   }
 
-  async getProductByCategoryId(categoryId) {
-
-    const response = await fetch(prodByCategory + `${categoryId}`);
-    if (response.ok) {
-      // const data = await convertToJson(response);
-      const data = await response.json();
-      console.log(data.type);
-      return data;
-    }
-  }
-  
-  async agencyData(agencyId) {
-
-    const response = await fetch(prodByCategory + `${agencyId}`);
-    if (response.ok) {
+  async weather(latitude, longitude) {
+    const response = await fetch(weatherURL1 + `${latitude}` + weatherURL2 + `${longitude}` + weatherURL3);
       const data = await convertToJson(response);
+      console.log(data);
       return data;
-    }
+
   }
+
 
   async checkout(json) {
     const thingToSend = {

@@ -81,7 +81,12 @@
     padding: 1rem;
   }
 
-  #rocketCountdown {
+  
+.rocketImg {
+  margin: 0 10px 0 10px;
+}
+
+  .rocketCountdown {
     padding: 1rem;
   }
 
@@ -90,18 +95,6 @@
     margin-top: 0;
   }
 
-  .agencyPara {
-    color: var(--primary-color);
-    text-align: center;
-    grid-column: 1/4;
-  }
-  
-  .agencyPara p {
-    font-size: larger;
-    margin-top: 0%;
-    color: var(--primary-color);
-    text-decoration: none;
-  }
 
   .cart-card {
     font-size: inherit;

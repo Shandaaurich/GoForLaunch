@@ -57,7 +57,9 @@ export default class Admin {
       this.login({
         email: email,
         password: password
-      }, this.showOrders.bind(this))
+      }
+      // , this.showOrders.bind(this)
+      )
     });
 
   };
