@@ -1,5 +1,5 @@
 import ExternalServices from "./ExternalServices.mjs";
-import { qs, getParams } from "./utils.mjs";
+import { qs } from "./utils.mjs";
 
 import GiftShop from "./GiftShop.mjs";
 
@@ -8,7 +8,6 @@ import GiftShop from "./GiftShop.mjs";
 // import categoryData from "../public/json/giftShopCat.json";
 // import productData from "../public/json/giftShopProducts.json";
 
-
 const catElement = qs(".product-categories");
 
 const catData = new ExternalServices();
@@ -16,14 +15,12 @@ const catData = new ExternalServices();
 const category = new GiftShop(catData, catElement);
 category.initCat();
 
-
 const topElement = qs(".product-top");
 
 const topData = new ExternalServices();
 
 const topProducts = new GiftShop(topData, topElement);
 topProducts.initTop();
-
 
 // //category list on giftshop index page
 // const category = new GiftShop(categoryData);
