@@ -1,4 +1,4 @@
-import ExternalServices from "./ExternalServices.mjs";
+
 import Weather from "./Weather.mjs";
 import { qs, getParams } from "./utils.mjs";
 
@@ -11,9 +11,7 @@ const longitude = getParams("lon");
 // titleElement.textContent = title;
 
 
-var agency = new ExternalServices();
-var listElement = qs(".agencyWeater");
+var listElement = qs(".agencyWeather");
 
-
-var list = new Weather(agency, listElement, latitude, longitude);
-list.init();
+var weather = new Weather(listElement, latitude, longitude);
+weather.init();

@@ -7,11 +7,13 @@ const launchURL = "https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?format=
 
 const agencySearchBase = "https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?format=json&search=";
 
-const weatherURL1 = "https://api.openweathermap.org/data/2.5/onecall?lat=";
+// const agencySearchBase = "https://ll.thespacedevs.com/2.2.0/launch/upcoming/?format=json&search=";
 
-const weatherURL2 = "&lon=";
+const apodAPI = "https://api.nasa.gov/planetary/apod?api_key=Gh26sZYkn3IaqGIQ3Jdagk298RCK4ZgXw6dcu6VG&count=10"
 
-const weatherURL3 = "&appid=946ee3e55995e79e2d6f02d00a3dce79&units=imperial";
+const fakeProducts = "https://api.escuelajs.co/api/v1/products"
+
+const fakeCategories = "https://api.escuelajs.co/api/v1/categories"
 
 
 async function convertToJson(res) {
@@ -22,7 +24,6 @@ async function convertToJson(res) {
     throw { name: "servicesError", message: data };
   }
 }
-
 
 export default class ExternalServices {
 
@@ -37,14 +38,26 @@ export default class ExternalServices {
     const data = await convertToJson(response);
     return data.results;
   }
-
-  async weather(latitude, longitude) {
-    const response = await fetch(weatherURL1 + `${latitude}` + weatherURL2 + `${longitude}` + weatherURL3);
-      const data = await convertToJson(response);
-      console.log(data);
-      return data;
-
+  
+  async apodData() {
+    const response = await fetch(apodAPI);
+    const data = await convertToJson(response);
+    return data;
   }
+
+  async prodCategories() {
+    const response = await fetch(fakeCategories);
+    const data = await convertToJson(response);
+    return data;
+  }
+
+  async allProducts() {
+    const response = await fetch(fakeProducts);
+    const data = await convertToJson(response);
+    return data;
+  }
+
+  
 
 
   async checkout(json) {
