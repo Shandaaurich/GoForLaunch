@@ -81,7 +81,11 @@
     padding: 1rem;
   }
 
-  #rocketCountdown {
+  .rocketImg {
+    margin: 0 10px 0 10px;
+  }
+
+  .rocketCountdown {
     padding: 1rem;
   }
 
@@ -101,23 +105,14 @@
     margin-bottom: 2rem;
   }
 
-
-  .product-categories img {
-    max-width: 50%;
-  }
-
-  .category-section {
+  .product-categories {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
-  
-  .product-section {
+
+  .product-top {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  .product-top img {
-    max-width: 50%;
   }
 
   footer {

@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GO FOR LAUNCH | Agency</title>
     <link rel="stylesheet" href="/css/small.css" />
     <link rel="stylesheet" href="/css/large.css" />
     <script src="../js/main.js" type="module"></script>
-</head>
+    <script src="../js/agency.js" type="module"></script>
+    <script src="../js/weather.js" type="module"></script>
+  </head>
 
-<body>
+  <body>
     <header class="divider" id="main-header">
-        <nav class="nav" id="main-nav"></nav>
-
+      <nav class="nav" id="main-nav"></nav>
     </header>
 
     <main class="divider">
-    <div class="hero">
-        <img src="/images/agencyHero.jpg" alt="image of a Rocket launch with trail" />
-    </div>
-    <section class="mission">
-        <h1><span class="agencyName"></span> {agency} Launch Page</h1>
-    </section>
-    <div class="divider"></div>
-    <section class="agency">
-        <h2>{agency's} Upcoming Launches</h2>
-        <ul class="agency-launches"></ul>
-
-    </section>
-</main>
+      <div class="hero">
+        <img
+          src="/images/hero3.jpg"
+          alt="image of a Rocket launch with trail"
+        />
+      </div>
+      <section class="agency">
+        <h2><span class="agencyName"></span>'s Upcoming Launches</h2>
+        <div>
+          <span class="agencyWeather"></span>
+        </div>
+        <div class="divider"></div>
+        <div class="agency-launches"></div>
+      </section>
+      <div class="divider"></div>
+    </main>
     <footer id="main-footer"></footer>
-</body>
-
+  </body>
 </html>

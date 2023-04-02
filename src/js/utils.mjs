@@ -43,6 +43,7 @@ export function renderListWithTemplate(template, parentElement, list, position =
 // render a template
 export function renderWithTemplate(template, parentElement, data, callback) {
   parentElement.insertAdjacentHTML("afterbegin", template);
+  // window.location.href = "";
   if (callback) {
     callback(data);
   }

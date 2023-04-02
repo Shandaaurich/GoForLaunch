@@ -19,7 +19,10 @@
   box-sizing: border-box;
 }
 body {
-  background-color: var(--black);
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(../public/images/hd-wallpaper-gf7366ea6f_1920.jpg);
+  /* background-color: var(--black); */
   margin: 0;
   font-family: var(--font-body);
   font-size: var(--font-base);
@@ -275,7 +278,23 @@ button {
 }
 
 .rocket-article {
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--tertiary-color);
+  padding: 10px;
+}
+
+.rocketInfo,
+.rocketImg,
+.rocketCountdown {
+  background-color: rgba(0, 0, 0, 0.45);
+  border: 2px solid var(--primary-color);
+  border-radius: 25px;
+}
+
+.rocketImg {
+  margin: 10px 0px 10px 0;
+}
+.rocketImg img {
+  border-radius: 25px;
 }
 
 .rocketInfo a {
@@ -285,6 +304,20 @@ button {
 .rocketInfo a:hover {
   text-decoration: underline;
   color: var(--primary-color);
+}
+
+.agencyPara {
+  margin-top: 10px;
+  color: var(--primary-color);
+  text-align: center;
+  grid-column: 1/4;
+}
+
+.agencyPara p {
+  font-size: larger;
+  margin-top: 0%;
+  color: var(--primary-color);
+  text-decoration: none;
 }
 
 .divider {
