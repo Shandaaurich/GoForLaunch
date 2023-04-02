@@ -15,6 +15,8 @@ const fakeProducts = "https://api.escuelajs.co/api/v1/products"
 
 const fakeCategories = "https://api.escuelajs.co/api/v1/categories"
 
+const filteredCategories = "https://api.escuelajs.co/api/v1/products/?categoryId="
+
 
 async function convertToJson(res) {
   const data = await res.json();
@@ -58,6 +60,11 @@ export default class ExternalServices {
   }
 
   
+  async filteredCategories(categoryId) {
+    const response = await fetch(filteredCategories + `${categoryId}`);
+    const data = await convertToJson(response);
+    return data;
+  }
 
 
   async checkout(json) {
