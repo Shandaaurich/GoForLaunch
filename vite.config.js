@@ -16,6 +16,8 @@ export default defineConfig({
         search: resolve(__dirname, "src/search_pages/index.html"),
         admin: resolve(__dirname, "src/admin/index.html"),
         giftshop: resolve(__dirname, "src/giftshop/index.html"),
+        agency: resolve(__dirname, "src/agency/index.html"),
+        pictureofday: resolve(__dirname, "src/POD/index.html")
       },
     },
   },
