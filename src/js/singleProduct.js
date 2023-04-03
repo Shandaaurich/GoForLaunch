@@ -1,12 +1,8 @@
-import ExternalServices from "./ExternalServices.mjs";
 import { qs, getParams } from "./utils.mjs";
 import SingleProduct from "./SingleProduct.mjs";
 
-
 const productId = getParams("product");
-console.log(productId);
 const prodName = getParams("prodName");
-
 
 var titleElement = qs(".productIdName");
 var title = prodName.toString();
@@ -15,4 +11,4 @@ titleElement.textContent = title;
 
 const productElement = qs(".product");
 const product = new SingleProduct(productElement, productId);
-product.productById()
+product.productById();

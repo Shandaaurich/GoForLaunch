@@ -1,13 +1,10 @@
-
 import ExternalServices from "./ExternalServices.mjs";
 import { qs, getParams } from "./utils.mjs";
 
 import GiftShop from "./GiftShop.mjs";
 
-
 const catId = getParams("category");
 const catName = getParams("catName");
-
 
 var titleElement = qs(".single-category");
 var title = catName.toString();
@@ -16,5 +13,9 @@ titleElement.textContent = title;
 
 const filteredCatElement = qs(".categories-filtered");
 const filteredCatData = new ExternalServices();
-const filteredCategories = new GiftShop(filteredCatData, filteredCatElement, catId);
-filteredCategories.initFilter()
+const filteredCategories = new GiftShop(
+  filteredCatData,
+  filteredCatElement,
+  catId
+);
+filteredCategories.initFilter();

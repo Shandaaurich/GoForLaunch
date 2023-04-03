@@ -119,11 +119,10 @@
     margin: 1rem;
   }
 
-  
-.single-product {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+  .single-product {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 
   footer {
     color: var(--primary-color);

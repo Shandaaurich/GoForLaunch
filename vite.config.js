@@ -17,7 +17,7 @@ export default defineConfig({
         admin: resolve(__dirname, "src/admin/index.html"),
         giftshop: resolve(__dirname, "src/giftshop/index.html"),
         agency: resolve(__dirname, "src/agency/index.html"),
-        pictureofday: resolve(__dirname, "src/POD/index.html")
+        pictureofday: resolve(__dirname, "src/POD/index.html"),
       },
     },
   },
