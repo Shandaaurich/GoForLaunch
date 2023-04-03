@@ -1,3 +1,6 @@
+import { getLocalStorage, setLocalStorage, qs, renderListWithTemplate, alertMessage } from "./utils.mjs";
+import { updateCartIcon } from "./Cart.mjs";
+
 
 export default class SingleProduct {
     constructor(listElement, productId) {
@@ -16,9 +19,47 @@ export default class SingleProduct {
             const data = await response.json();
             this.productByIdTemplate(data);
         }
+        
+        document.getElementById("addToCart")
+                .addEventListener("click", this.addToCart.bind(this));
     }
 
+    addToCart() {
+        let products = []; // init cart array
+        let numberOfItems = 0; //init cart bubble
+
+        if (localStorage.getItem("so-cart")) {
+            //if contents in previous array
+            products = getLocalStorage("so-cart"); //add old contents to array
+        }
+        //check to see if item exists in local storage
+        const productIndex = products.findIndex(
+            (product) => product.Name === this.product.Name
+        );
+        //if item exists in local storage, remove item, increment quantity
+        if (productIndex !== -1) {
+            this.product.quantity += 1;
+            // console.log(this.product.quantity)
+            products.splice(productIndex, 1);
+        }
+        //add item into cart
+
+        products.push(this.product); // add new content to array
+        setLocalStorage("so-cart", products); //push to storage
+
+
+
+        numberOfItems = getLocalStorage("numberOfItems");
+        numberOfItems += 1
+        setLocalStorage("numberOfItems", numberOfItems);
+        //update the cart icon bubble text
+        updateCartIcon(numberOfItems);
+        alertMessage(`Item added to cart! <a href="../cart/index.html">Go to cart</a>`)
+    }
+
+
     productByIdTemplate(product) {
+
         let element = this.listElement;
         let prodDiv = document.createElement("div");
         prodDiv.className = "single-product";
@@ -43,22 +84,19 @@ export default class SingleProduct {
         priceP.innerHTML = `$${price}.00`;
         priceDiv.appendChild(priceP);
 
+        let buttonDiv = document.createElement("div");
+        buttonDiv.className = "product-detail__add";
+        let button = document.createElement("button");
+        button.setAttribute("id", "addToCart");
+        button.setAttribute("data-id", `"${product.id}"`);
+        button.innerHTML = "Add to Cart";
+        buttonDiv.appendChild(button);
+
         prodDiv.appendChild(imgDiv);
         descDiv.appendChild(priceDiv);
+        descDiv.appendChild(buttonDiv);
         prodDiv.appendChild(descDiv);
         element.appendChild(prodDiv);
 
-
-        
-//         `
-//             <section class="product-section">
-//             <div class="category" id="${product.title}category">
-//             <a href="../singleProduct/index.html?product=${product.id}">
-//             <img src="${product.category.image}" alt="${product.title} Products"/>
-//             <h2>Space ${product.title}</h2>
-//             </a>
-//             </div>
-//             </section>
-//   `
     }
 };

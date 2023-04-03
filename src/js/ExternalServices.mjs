@@ -66,6 +66,13 @@ export default class ExternalServices {
     return data;
   }
 
+  
+  async findProductById(id) {
+    const response = await fetch(fakeProducts + `/product/${id}`);
+    const data = await convertToJson(response);
+    return data.Result;
+  }
+
 
   async checkout(json) {
     const thingToSend = {
