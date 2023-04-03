@@ -4,7 +4,7 @@ import { getLocalStorage, qs } from "./utils.mjs";
 export function initCartIcon() {
     if (localStorage.getItem("so-cart")) {
         //if contents in cart, then display how many in a bubble next to the cart icon
-        var products = getLocalStorage("so-cart");
+        // var products = getLocalStorage("so-cart");
         let numberOfItems = getLocalStorage("numberOfItems");
         if (numberOfItems > 0) {
             updateCartIcon(numberOfItems);

@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage, qs, renderListWithTemplate, alertMessage } from "./utils.mjs";
+import { getLocalStorage, setLocalStorage, alertMessage } from "./utils.mjs";
 import { updateCartIcon } from "./Cart.mjs";
 
 
