@@ -12,22 +12,22 @@ export default class GiftShop {
     this.renderCategoryDetails(list);
   }
 
+  renderCategoryDetails(list) {
+    renderListWithTemplate(categoryTemplate, this.listElement, list);
+  }
+
   async initTop() {
     const list = await this.dataSource.allProducts();
     this.renderTopProductDetails(list)
+  }
+  
+  renderTopProductDetails(list) {
+    renderListWithTemplate(topProductTemplate, this.listElement, list);
   }
 
   async initFilter() {
     const list = await this.dataSource.filteredCategories(this.categoryId)
     this.renderFilteredCategoryDetails(list)
-  }
-
-  renderCategoryDetails(list) {
-    renderListWithTemplate(categoryTemplate, this.listElement, list);
-  }
-  
-  renderTopProductDetails(list) {
-    renderListWithTemplate(topProductTemplate, this.listElement, list);
   }
 
   renderFilteredCategoryDetails(list) {
@@ -55,7 +55,7 @@ function topProductTemplate(product) {
   return `
   <section class="product-section">
   <div class="category" id="${product.title}category">
-  <a href="./product-pages/index.html?product=${product.name}">
+  <a href="../product_pages/index.html?product=${product.id}&prodName=${product.title}">
   <img src="${product.category.image}" alt="${product.title} Products"/>
   <h2>Space ${product.title}</h2>
   </a>

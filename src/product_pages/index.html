@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/small.css" />
     <link rel="stylesheet" href="/css/large.css" />
     <script src="../js/main.js" type="module"></script>
-    <script src="../js/giftShop.js" type="module"></script>
+    <script src="../js/singleProduct.js" type="module"></script>
   </head>
 
   <body>
@@ -15,19 +15,18 @@
       <nav class="nav" id="main-nav"></nav>
     </header>
     <main class="divider">
-      <div class="hero">
+      <!-- <div class="hero">
         <img
           src="/images/giftShopHero.jpg"
           alt="image of a high mountain lake"
         />
-      </div>
+      </div> -->
       <section class="mission">
-        <h1>Gifts that are out of this world!</h1>
+        <h1>Space <span class="productIdName"></span></h1>
       </section>
 
-      <section class="products">
-        <h2><span data-id="gift_shop_categories"></span></h2>
-        <div class="product-categories"></div>
+      <section class="productByID">
+        <div class="product"></div>
       </section>
     </main>
     <footer id="main-footer"></footer>

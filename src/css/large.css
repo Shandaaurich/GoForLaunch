@@ -115,6 +115,16 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 
+  .product-desc {
+    margin: 1rem;
+  }
+
+  
+.single-product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
   footer {
     color: var(--primary-color);
     font-size: var(--small-font);
