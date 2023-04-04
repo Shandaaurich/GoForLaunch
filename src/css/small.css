@@ -228,7 +228,17 @@ button {
 .cart {
   padding-top: 1em;
   position: relative;
-  text-align: center;
+  text-align: right;
+  margin-right: 1rem;
+}
+.cart p {
+  color: var(--primary-color);
+  font-weight: bolder;
+}
+
+.cart a {
+  
+  text-decoration: none;
 }
 
 /* total items in cart superscript */
@@ -288,6 +298,7 @@ button {
   background-color: rgba(0, 0, 0, 0.45);
   border: 2px solid var(--primary-color);
   border-radius: 25px;
+  text-align: center;
 }
 
 .rocketImg {

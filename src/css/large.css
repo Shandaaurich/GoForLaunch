@@ -76,17 +76,17 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }
+
   .rocketInfo,
-  .rocketImg {
+  .rocketImg,
+  .rocketCountdown {
     padding: 1rem;
+    text-align: left;
   }
+
 
   .rocketImg {
     margin: 0 10px 0 10px;
-  }
-
-  .rocketCountdown {
-    padding: 1rem;
   }
 
   .rocket-article h3,

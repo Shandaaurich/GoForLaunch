@@ -54,12 +54,23 @@ async function loadTemplate(path) {
   return template;
 }
 
-export async function loadHeaderFooter(headerData, headerCallback) {
+export async function loadHeaderFooter() {
 
   const headerTemplate = await loadTemplate("/partials/header.html");
   const headerExport = document.querySelector("#main-header");
   const footerTemplate = await loadTemplate("/partials/footer.html");
   const footerExport = document.querySelector("#main-footer");
+
+  renderWithTemplate(headerTemplate, headerExport);
+  renderWithTemplate(footerTemplate, footerExport);
+}
+
+export async function loadGiftHeaderFooter(headerData, headerCallback) {
+
+  const headerTemplate = await loadTemplate("/partials/giftshopHeader.html");
+  const headerExport = document.querySelector("#giftshop-header");
+  const footerTemplate = await loadTemplate("/partials/footer.html");
+  const footerExport = document.querySelector("#giftshop-footer");
 
   renderWithTemplate(headerTemplate, headerExport, headerData, headerCallback);
   renderWithTemplate(footerTemplate, footerExport);

@@ -69,7 +69,7 @@ function filteredCategoryTemplate(products) {
   return `
   <section class="product-section">
   <div class="category" id="${products.title}category">
-  <a href="../category-listing/index.html?product=${products.name}">
+  <a href="../product_pages/index.html?product=${products.id}&prodName=${products.title}">
   <img src="${products.category.image}" alt="${products.title} Products"/>
   <h2>Space ${products.title}</h2>
   </a>
