@@ -13,8 +13,6 @@ export default defineConfig({
         checkout: resolve(__dirname, "src/checkout/index.html"),
         product: resolve(__dirname, "src/product_pages/index.html"),
         category: resolve(__dirname, "src/category-listing/index.html"),
-        search: resolve(__dirname, "src/search_pages/index.html"),
-        admin: resolve(__dirname, "src/admin/index.html"),
         giftshop: resolve(__dirname, "src/giftshop/index.html"),
         agency: resolve(__dirname, "src/agency/index.html"),
         pictureofday: resolve(__dirname, "src/POD/index.html"),
