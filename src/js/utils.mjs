@@ -1,4 +1,4 @@
-// import { initCartIcon } from "./Cart.mjs";
+
 
 // wrapper for querySelector...returns matching element
 export function qs(selector, parent = document) {

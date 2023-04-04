@@ -1,18 +1,5 @@
 import { qs } from "./utils.mjs";
 
-// function weatherTemplate(weather) {
-
-
-//   const temp = weather.current.temp.toFixed(0);
-//   const description = weather.current.weather[0].description;
-
-//   console.log(temp, description);
-
-//   return `
-//       <h4> Current weather: ${temp}&#176; F, ${description}</h4>
-//       `
-
-// }
 
 export default class Weather {
   constructor(listElement, latitude, longitude) {

@@ -1,6 +1,4 @@
 import {
-  // getLocalStorage,
-  // renderListWithTemplate,
   qs,
 } from "./utils.mjs";
 import ShoppingCart from "./ShoppingCart.mjs";
